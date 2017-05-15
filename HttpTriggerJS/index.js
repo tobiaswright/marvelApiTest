@@ -8,7 +8,6 @@ const privateKey = process.env["PRI_KEY"];
 
 const url = "https://gateway.marvel.com/v1/public/";
 
-
 let createHash = (ts) => {
     return crypto.createHash('md5').update(ts + privateKey + publicKey).digest('hex');
 }
@@ -84,7 +83,6 @@ module.exports = function (context, req) {
             body: events
         };
 
-        context.log(process.env["test"])
-        context.done()
+        context.done();
     })
 }; 
